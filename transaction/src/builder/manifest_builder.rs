@@ -12,6 +12,7 @@ use radix_engine_interface::blueprints::consensus_manager::*;
 use radix_engine_interface::blueprints::identity::*;
 use radix_engine_interface::blueprints::package::*;
 use radix_engine_interface::blueprints::resource::*;
+//use utils::rust::collections::IndexMap;
 
 /// A manifest builder for use in tests.
 ///
@@ -85,7 +86,7 @@ pub struct ManifestBuilder {
     /// Instructions generated.
     instructions: Vec<InstructionV1>,
     /// Blobs
-    blobs: BTreeMap<Hash, Vec<u8>>,
+    blobs: IndexMap<Hash, Vec<u8>>,
 }
 
 pub struct NewSymbols {
@@ -101,7 +102,7 @@ impl ManifestBuilder {
         Self {
             registrar: ManifestNameRegistrar::new(),
             instructions: Vec::new(),
-            blobs: BTreeMap::default(),
+            blobs: IndexMap::default(),
         }
     }
 

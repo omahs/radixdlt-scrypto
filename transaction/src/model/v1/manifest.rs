@@ -1,3 +1,5 @@
+//use utils::rust::collections::IndexMap;
+
 use super::*;
 use crate::internal_prelude::*;
 
@@ -10,7 +12,7 @@ use crate::internal_prelude::*;
 #[derive(Debug, Clone, PartialEq, Eq, ManifestSbor)]
 pub struct TransactionManifestV1 {
     pub instructions: Vec<InstructionV1>,
-    pub blobs: BTreeMap<Hash, Vec<u8>>,
+    pub blobs: IndexMap<Hash, Vec<u8>>,
 }
 
 impl TransactionManifestV1 {
